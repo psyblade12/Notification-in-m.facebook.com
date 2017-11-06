@@ -19,7 +19,7 @@ document.getElementsByClassName("_59tg")[2].addEventListener("DOMNodeInserted", 
         if(b[2].innerHTML != "0")
         {
                 //Khai báo địa chỉ của file âm thanh. Nếu muốn có thể tự chỉnh thành file khác.
-                var audio = new Audio('https://raw.githubusercontent.com/psyblade12/mycv/master/CasioChime.mp3');
+                var audio = new Audio('https://raw.githubusercontent.com/psyblade12/Notification-in-m.facebook.com/master/CasioChime.mp3');
                 audio.play();
         }
 });
