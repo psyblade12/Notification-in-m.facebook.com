@@ -8,18 +8,21 @@
 // @grant        none
 // ==/UserScript==
 
+//Disable page visibility api to make browser play sound even when browser is off to the bottom, or when the active web tab is not Facebook.
 Object.defineProperties(document.wrappedJSObject,{ 'hidden': {value: false}, 'visibilityState': {value: 'visible'} });
 window.addEventListener( 'visibilitychange', evt => evt.stopImmediatePropagation(), true);
 
-var initialization = new Audio('https://raw.githubusercontent.com/psyblade12/mycv/master/CasioChime.mp3');
+//For some reason, the procedure is must to make Yandex use this script stably.
+var initialization = new Audio('https://raw.githubusercontent.com/psyblade12/Notification-in-m.facebook.com/master/Initialization.mp3');
 initialization.play();
 
-//Add event listener cho element thứ 2 của các class có tên _59tg, khi có sự thay đổi thì sẽ kích hoạt event
+//Add event listener to element #2 of classes named "_59tg". Event will fire if the web browser detects changes in inner HTML of that element.  
 document.getElementsByClassName("_59tg")[2].addEventListener("DOMNodeInserted", function(){
         var b =  document.getElementsByClassName("_59tg");
-    //Nếu như có tin nhắn - Số tin nhắn khác 0
+    //If there is a mess, then its inner HTML of this element will be something, like "1","2" or "3".... except "0"
         if(b[2].innerHTML != "0")
         {
+                //Play the notification sound. If you want, then change the link. Replace my link by any sound you want to hear.
                 var audio = new Audio('https://raw.githubusercontent.com/psyblade12/mycv/master/CasioChime.mp3');
                 audio.play();
         }
